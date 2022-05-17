@@ -2,11 +2,28 @@
 <html>
     <head>
         <title>PAYMENT</title>
+        <link rel="stylesheet" type="text" href="styles.css">
+        <style>
+            body{
+                font-family: Arial;
+                margin: 1;
+                background-image: url(https://img.freepik.com/free-vector/realistic-studio-lights-empty-background-design_1017-27233.jpg?w=2000);
+            }
+            header{
+                padding: 60px;
+                text-align:center;
+                background:red;
+                color: blue;
+                font-size: 30px;
+            }
+            .content{padding: 20px;}
+        </style>
     </head>
-    <body background="https://png.pngtree.com/thumb_back/fh260/backgroun…-model-minimal-background-render-image_437743.jpg ">
+    <body background="C:\Users\mohsi\Downloads\app2.jpg">
         <h1 style="text-align: center; color: blue;">Payment</h1>
-        <h3><b> cards accepted </b></h3>
+        <h3 style="background-color: blueviolet;"><b> cards accepted </b></h3>
         <img src="https://www.paypal-community.com/t5/image/serverpage/image-id/12803i1A90C53C0E39042D?v=v2"></img>
+        <hr style="background-color:red;" size="20px">
         <img align="right" width="800" height="400" src="https://media1.giphy.com/media/7SF5scGB2AFrgsXP63/giphy.gif">
         <p style="color:red;"><b><u>NAME</u></b></p>
         <table style="color:red; text-align: left;"><tr><td><input type="fname"></td></tr></table><br>
@@ -33,6 +50,49 @@
     <table style="color:red;"><tr><td><input type="text"></td></tr></table><br><br>
     <label style="color:red;" for="text"><b><u>Expiry year</u></b></label>
     <table style="color:red;"><tr><td><input type="text"></td></tr></table><br><br>
+<form>
+    <label style="color:red;"><b><u>ENTER CAPTCHA:</u></b></label>
+        <h4 >CAPTCHA NOT VISIBLE <img src="https://www.freeiconspng.com/thumbs/refresh-icon/refresh-icon-0.png" width="20px" onclick="cap()"></h4>
+   <div class="form-row">
+       <div class="form-group col-md-6">   
+           <input type="text" class="form-control" readonly id="capt" style="background-color:silver;">
+        </div>   
+        <div class="form-group col-md-6">
+           <input type="text" class="form-control" id="textinput">           
+       </div>
+   </div>   
+   <div class="form group">
+       <button onclick="validcap()" class="btn btn-lg btn-success btn-block">Submit</button>
+   </div>
+   <script type="text/javascript">
+       function cap(){
+           var alpha =[ 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
+                        ,'1','2','3','4','5','6','7','8','9','0','+','^','&','*','$','%','#','!','@']
+                         var a = alpha[Math.floor(Math.random()*71)];
+                         var b = alpha[Math.floor(Math.random()*71)];
+                         var c = alpha[Math.floor(Math.random()*71)];
+                         var d = alpha[Math.floor(Math.random()*71)];
+                         var e = alpha[Math.floor(Math.random()*71)];
+                         var f = alpha[Math.floor(Math.random()*71)];
+
+                         var final=a+b+c+d+e+f
+                         document.getElementById("capt").value=final;
+       }
+                 function validcap(){
+                     var stg1 =  document.getElementById("capt").value;
+                     var stg2 =  document.getElementById("textinput").value;
+                     if(stg1=stg2){
+                         alert("form validated successfully");
+                         return true;
+                     }
+                     else{
+                         alert("please enter valid captcha");
+                         return false;
+                     }
+                 }
+
+   </script>
+   </form>
     <a href="http://127.0.0.1:5500/application%20form4.html"><button>SUBMIT</button></a><br>
     <a href="http://127.0.0.1:5500/application%20form.html"><button>GO BACK TO APPLICATION FORM</button></a>
     <a href="http://127.0.0.1:5500/application%20form%202.html"><button>GO BACK TO HOME PAGE</button></a>
